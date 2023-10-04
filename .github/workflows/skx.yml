@@ -39,7 +39,7 @@ jobs:
 
       - name: PR_SKX_CLANG1001_THREADS_SERIAL_LEFT_RELEASE
         run: |
-          eval $RUNCMD kokkos-kernels/scripts/cm_test_all_sandia \
+          kokkos-kernels/scripts/cm_test_all_sandia \
             --spot-check llvm/10.0.1 \
             --kokkos-path=$PWD/kokkos \
             --kokkoskernels-path=$PWD/kokkos-kernels \
