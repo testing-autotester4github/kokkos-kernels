@@ -49,3 +49,4 @@ jobs:
           hostname
           ls -lat
           pwd
+          echo $RUNCMD
