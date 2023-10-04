@@ -39,6 +39,8 @@ jobs:
 
       - name: PR_H100_CUDA1180_CONFIGURE
         run: |
+          whoami
+          ls $MODULEENVPATH
           eval $MODULEENV
           module load cmake gcc/11.3.0 cuda/11.8.0 git openblas/0.3.23
           $PWD/kokkos-kernels/cm_generate_makefile.bash --with-cuda --arch=HOPPER90 --compiler=$PWD/kokkos/bin/nvcc_wrapper -kokkos-path=$PWD/kokkos --with-tpls=cusparse,cublas
