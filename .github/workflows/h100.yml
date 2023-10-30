@@ -24,7 +24,7 @@ jobs:
     name: h100-ci
     runs-on: [h100]
     container:
-      image: docker.io/library/ubuntu:latest
+      image: registry-ex.sandia.gov/evho/github-actions-trilinos-containers/gcc8.3.0
 
     steps:
       - name: checkout_kokkos_kernels
