@@ -23,6 +23,8 @@ jobs:
     # TODO: allow re-run via retest label if: ${{ github.event.label.name == 'AT: RETEST' }}
     name: h100-ci
     runs-on: [h100]
+    container:
+      image: docker.io/library/ubuntu:latest
 
     steps:
       - name: checkout_kokkos_kernels
