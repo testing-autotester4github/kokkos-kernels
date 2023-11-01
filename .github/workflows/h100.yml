@@ -23,8 +23,6 @@ jobs:
     # TODO: allow re-run via retest label if: ${{ github.event.label.name == 'AT: RETEST' }}
     name: h100-ci
     runs-on: [h100]
-    container:
-      image: registry-ex.sandia.gov/sems/containers/rhel8/rhel8-testing/gcc:12.2.0
 
     steps:
       - name: checkout_kokkos_kernels
@@ -38,6 +36,13 @@ jobs:
           repository: kokkos/kokkos
           ref: ${{ github.base_ref }}
           path: kokkos
+
+      - name: PR_H100_TEST_GCC_CONTAINER
+        run: |
+          whoami
+          ls
+          gcc --version
+          which gcc
 
       - name: PR_H100_CUDA1180_CONFIGURE
         run: |
