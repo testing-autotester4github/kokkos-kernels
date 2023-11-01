@@ -63,7 +63,7 @@ jobs:
           mkdir -p kokkos-kernels/{build,install}
           cd kokkos-kernels/build
           cmake \
-          -DKokkos_DIR=$PWD/../../kokkos/install/lib/cmake/Kokkos \
+          -DKokkos_DIR=$PWD/../../kokkos/install/lib64/cmake/Kokkos \
           -DCMAKE_BUILD_TYPE=${{ matrix.cmake_build_type }} \
           -DCMAKE_CXX_FLAGS="-Wall -Wshadow -pedantic -Werror -Wsign-compare -Wtype-limits -Wignored-qualifiers -Wempty-body -Wuninitialized" \
           -DCMAKE_INSTALL_PREFIX=$PWD/../install \
