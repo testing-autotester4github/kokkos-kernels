@@ -22,7 +22,7 @@ jobs:
   h100:
     # TODO: allow re-run via retest label if: ${{ github.event.label.name == 'AT: RETEST' }}
     name: gcc-container-ci
-    runs-on: [h100]
+    runs-on: [gcc13]
 
     steps:
       - name: checkout_kokkos_kernels
