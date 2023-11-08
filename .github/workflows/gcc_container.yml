@@ -40,6 +40,9 @@ jobs:
       - name: configure_kokkos
         run: |
           env
+          pwd
+          ls -lat
+          ls -lat /home/runner
           mkdir -p kokkos/{build,install}
           cd kokkos/build
           cmake \
