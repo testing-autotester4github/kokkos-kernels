@@ -39,6 +39,7 @@ jobs:
 
       - name: configure_kokkos
         run: |
+          env
           mkdir -p kokkos/{build,install}
           cd kokkos/build
           cmake \
