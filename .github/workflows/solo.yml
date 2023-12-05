@@ -59,6 +59,8 @@ jobs:
             -DKokkos_ENABLE_DEPRECATED_CODE_4=OFF \
             -DKokkos_ENABLE_DEPRECATION_WARNINGS=OFF \
             ..
+          cd ../install
+          find -iname findkokkos.cmake
 
       - name: build_and_install_kokkos
         working-directory: kokkos/build
@@ -70,7 +72,7 @@ jobs:
           cd kokkos-kernels/build
           cmake \
           -DCMAKE_CXX_COMPILER=g++ \
-          -DKokkos_DIR=$PWD/../../kokkos/install/lib64/cmake/Kokkos \
+          -DKokkos_DIR=$PWD/../../kokkos/install/lib/cmake/Kokkos \
           -DCMAKE_CXX_FLAGS="-O3 " \
           -DCMAKE_INSTALL_PREFIX= \
           -DKokkosKernels_ENABLE_TESTS_AND_PERFSUITE=OFF \
