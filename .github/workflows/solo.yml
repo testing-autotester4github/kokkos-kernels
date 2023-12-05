@@ -68,14 +68,11 @@ jobs:
 
       - name: configure_kokkos_kernels
         run: |
-          ls -lat kokkos/install/
-          ls -lat kokkos/install/lib
-          find -iname findkokkos.cmake
           mkdir -p kokkos-kernels/{build,install}
           cd kokkos-kernels/build
           cmake \
           -DCMAKE_CXX_COMPILER=g++ \
-          -DKokkos_DIR=$PWD/../../kokkos/install/lib/cmake/Kokkos \
+          -DKokkos_DIR=$PWD/../../kokkos/install/lib64/cmake/Kokkos \
           -DCMAKE_CXX_FLAGS="-O3 " \
           -DCMAKE_INSTALL_PREFIX= \
           -DKokkosKernels_ENABLE_TESTS_AND_PERFSUITE=OFF \
