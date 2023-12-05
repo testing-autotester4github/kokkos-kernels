@@ -68,7 +68,8 @@ jobs:
 
       - name: configure_kokkos_kernels
         run: |
-          ls -lat
+          ls -lat kokkos/install/
+          ls -lat kokkos/install/lib
           find -iname findkokkos.cmake
           mkdir -p kokkos-kernels/{build,install}
           cd kokkos-kernels/build
