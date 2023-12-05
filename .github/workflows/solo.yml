@@ -59,7 +59,7 @@ jobs:
             -DKokkos_ENABLE_DEPRECATED_CODE_4=OFF \
             -DKokkos_ENABLE_DEPRECATION_WARNINGS=OFF \
             ..
-          cd ../install
+          cd ..
           find -iname findkokkos.cmake
 
       - name: build_and_install_kokkos
@@ -68,6 +68,8 @@ jobs:
 
       - name: configure_kokkos_kernels
         run: |
+          ls -lat
+          find -iname findkokkos.cmake
           mkdir -p kokkos-kernels/{build,install}
           cd kokkos-kernels/build
           cmake \
