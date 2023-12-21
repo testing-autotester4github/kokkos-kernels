@@ -41,7 +41,6 @@ jobs:
         run: |
           mkdir -p kokkos/{build,install}
           cd kokkos/build
-          #-DCMAKE_CXX_FLAGS=-O3 -Wall -Wunused-parameter -Wshadow -pedantic -Werror -Wsign-compare -Wtype-limits -Wignored-qualifiers -Wempty-body -Wclobbered -Wuninitialized
           cmake \
             -DCMAKE_CXX_COMPILER=g++ \
             -DCMAKE_CXX_FLAGS=-O3 \
@@ -67,33 +66,32 @@ jobs:
         run: |
           mkdir -p kokkos-kernels/{build,install}
           cd kokkos-kernels/build
-          #-DCMAKE_CXX_FLAGS="-O3 -Wall -Wunused-parameter -Wshadow -pedantic -Werror -Wsign-compare -Wtype-limits -Wignored-qualifiers -Wempty-body -Wclobbered -Wuninitialized "
           cmake \
-          -DCMAKE_CXX_COMPILER=g++ \
-          -DKokkos_DIR=$PWD/../../kokkos/install/lib64/cmake/Kokkos \
-          -DCMAKE_CXX_FLAGS="-O3 " \
-          -DCMAKE_INSTALL_PREFIX= \
-          -DKokkosKernels_ENABLE_TESTS_AND_PERFSUITE=OFF \
-          -DKokkosKernels_ENABLE_TESTS=ON \
-          -DKokkosKernels_ENABLE_PERFTESTS=ON \
-          -DKokkosKernels_ENABLE_EXAMPLES:BOOL=ON \
-          -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF \
-          -DKokkosKernels_INST_COMPLEX_DOUBLE=ON \
-          -DKokkosKernels_INST_DOUBLE=ON \
-          -DKokkosKernels_INST_ORDINAL_INT=ON \
-          -DKokkosKernels_INST_OFFSET_SIZE_T=ON \
-          -DKokkosKernels_INST_OFFSET_INT=ON \
-          -DKokkosKernels_INST_LAYOUTLEFT=ON \
-          -DKokkosKernels_ENABLE_TPL_ROCSPARSE=OFF \
-          -DKokkosKernels_ENABLE_TPL_ROCBLAS=OFF \
-          -DKokkosKernels_ENABLE_TPL_CUSOLVER=OFF \
-          -DKokkosKernels_ENABLE_TPL_CUSPARSE=OFF \
-          -DKokkosKernels_ENABLE_TPL_CUBLAS=OFF \
-          -DCMAKE_EXE_LINKER_FLAGS="" \
-          -DBUILD_SHARED_LIBS=OFF \
-          -DKokkosKernels_TEST_ETI_ONLY=OFF \
-          -DKokkosKernels_ENABLE_DOCS=OFF \
-          ..
+            -DCMAKE_CXX_COMPILER=g++ \
+            -DKokkos_DIR=$PWD/../../kokkos/install/lib64/cmake/Kokkos \
+            -DCMAKE_CXX_FLAGS="-O3 " \
+            -DCMAKE_INSTALL_PREFIX= \
+            -DKokkosKernels_ENABLE_TESTS_AND_PERFSUITE=OFF \
+            -DKokkosKernels_ENABLE_TESTS=ON \
+            -DKokkosKernels_ENABLE_PERFTESTS=ON \
+            -DKokkosKernels_ENABLE_EXAMPLES:BOOL=ON \
+            -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF \
+            -DKokkosKernels_INST_COMPLEX_DOUBLE=ON \
+            -DKokkosKernels_INST_DOUBLE=ON \
+            -DKokkosKernels_INST_ORDINAL_INT=ON \
+            -DKokkosKernels_INST_OFFSET_SIZE_T=ON \
+            -DKokkosKernels_INST_OFFSET_INT=ON \
+            -DKokkosKernels_INST_LAYOUTLEFT=ON \
+            -DKokkosKernels_ENABLE_TPL_ROCSPARSE=OFF \
+            -DKokkosKernels_ENABLE_TPL_ROCBLAS=OFF \
+            -DKokkosKernels_ENABLE_TPL_CUSOLVER=OFF \
+            -DKokkosKernels_ENABLE_TPL_CUSPARSE=OFF \
+            -DKokkosKernels_ENABLE_TPL_CUBLAS=OFF \
+            -DCMAKE_EXE_LINKER_FLAGS="" \
+            -DBUILD_SHARED_LIBS=OFF \
+            -DKokkosKernels_TEST_ETI_ONLY=OFF \
+            -DKokkosKernels_ENABLE_DOCS=OFF \
+            ..
 
       - name: build_kokkos_kernels
         working-directory: kokkos-kernels/build
@@ -153,30 +151,30 @@ jobs:
           mkdir -p kokkos-kernels/{build,install}
           cd kokkos-kernels/build
           cmake \
-          -DCMAKE_CXX_COMPILER=g++ \
-          -DKokkos_DIR=$PWD/../../kokkos/install/lib64/cmake/Kokkos \
-          -DCMAKE_CXX_FLAGS="-O3 " \
-          -DCMAKE_INSTALL_PREFIX= \
-          -DKokkosKernels_ENABLE_TESTS_AND_PERFSUITE=OFF \
-          -DKokkosKernels_ENABLE_TESTS=ON \
-          -DKokkosKernels_ENABLE_PERFTESTS=ON \
-          -DKokkosKernels_ENABLE_EXAMPLES:BOOL=ON \
-          -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF \
-          -DKokkosKernels_INST_COMPLEX_DOUBLE=ON \
-          -DKokkosKernels_INST_DOUBLE=ON \
-          -DKokkosKernels_INST_ORDINAL_INT=ON \
-          -DKokkosKernels_INST_OFFSET_SIZE_T=ON \
-          -DKokkosKernels_INST_OFFSET_INT=ON \
-          -DKokkosKernels_INST_LAYOUTLEFT=ON \
-          -DKokkosKernels_ENABLE_TPL_ROCSPARSE=OFF \
-          -DKokkosKernels_ENABLE_TPL_ROCBLAS=OFF \
-          -DKokkosKernels_ENABLE_TPL_CUSOLVER=OFF \
-          -DKokkosKernels_ENABLE_TPL_CUSPARSE=OFF \
-          -DKokkosKernels_ENABLE_TPL_CUBLAS=OFF \
-          -DCMAKE_EXE_LINKER_FLAGS="" \
-          -DBUILD_SHARED_LIBS=OFF \
-          -DKokkosKernels_ENABLE_DOCS=OFF \
-          ..
+            -DCMAKE_CXX_COMPILER=g++ \
+            -DKokkos_DIR=$PWD/../../kokkos/install/lib64/cmake/Kokkos \
+            -DCMAKE_CXX_FLAGS="-O3 " \
+            -DCMAKE_INSTALL_PREFIX= \
+            -DKokkosKernels_ENABLE_TESTS_AND_PERFSUITE=OFF \
+            -DKokkosKernels_ENABLE_TESTS=ON \
+            -DKokkosKernels_ENABLE_PERFTESTS=ON \
+            -DKokkosKernels_ENABLE_EXAMPLES:BOOL=ON \
+            -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF \
+            -DKokkosKernels_INST_COMPLEX_DOUBLE=ON \
+            -DKokkosKernels_INST_DOUBLE=ON \
+            -DKokkosKernels_INST_ORDINAL_INT=ON \
+            -DKokkosKernels_INST_OFFSET_SIZE_T=ON \
+            -DKokkosKernels_INST_OFFSET_INT=ON \
+            -DKokkosKernels_INST_LAYOUTLEFT=ON \
+            -DKokkosKernels_ENABLE_TPL_ROCSPARSE=OFF \
+            -DKokkosKernels_ENABLE_TPL_ROCBLAS=OFF \
+            -DKokkosKernels_ENABLE_TPL_CUSOLVER=OFF \
+            -DKokkosKernels_ENABLE_TPL_CUSPARSE=OFF \
+            -DKokkosKernels_ENABLE_TPL_CUBLAS=OFF \
+            -DCMAKE_EXE_LINKER_FLAGS="" \
+            -DBUILD_SHARED_LIBS=OFF \
+            -DKokkosKernels_ENABLE_DOCS=OFF \
+            ..
 
       - name: build_kokkos_kernels
         working-directory: kokkos-kernels/build
@@ -294,8 +292,6 @@ jobs:
         run: |
           mkdir -p kokkos/{build,install}
           cd kokkos/build
-
-          # CMAKE_CXX_FLAGS=--gcc-toolchain=/opt/rh/devtoolset-10/root/usr ???
           cmake \
             -DCMAKE_CXX_COMPILER=clang++ \
             -DCMAKE_CXX_FLAGS="-O3 -Wall -Wunused-parameter -Wshadow -pedantic -Werror -Wsign-compare -Wtype-limits -Wuninitialized" \
@@ -323,8 +319,6 @@ jobs:
         run: |
           mkdir -p kokkos-kernels/{build,install}
           cd kokkos-kernels/build
-
-          # TODO: CMAKE_INSTALL_REFIX=--gcc-toolchain=/opt/rh/devtoolset-10/root/usr ??
           cmake \
             -DCMAKE_CXX_COMPILER=clang++ \
             -DKokkos_DIR=$PWD/../../kokkos/install/lib64/cmake/Kokkos \
