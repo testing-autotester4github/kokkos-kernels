@@ -19,9 +19,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  PR_SKX_GNU1020_OPENMP_LEFT_REL_NOETI:
+  PR_BDW_GNU1020_OPENMP_LEFT_REL_NOETI:
     # TODO: allow re-run via retest label if: ${{ github.event.label.name == 'AT: RETEST' }}
-    name: PR_SKX_GNU1020_OPENMP_LEFT_REL_NOETI
+    name: PR_BDW_GNU1020_OPENMP_LEFT_REL_NOETI
     runs-on: [kk-env-gcc-10.2.0-latest]
     
     steps:
@@ -103,9 +103,9 @@ jobs:
         working-directory: kokkos-kernels/build
         run: ctest --output-on-failure -V --timeout 3600
 
-  PR_SKX_GNU1020_THREADS_SERIAL_RIGHT_REL:
+  PR_BDW_GNU1020_THREADS_SERIAL_RIGHT_REL:
     # TODO: allow re-run via retest label if: ${{ github.event.label.name == 'AT: RETEST' }}
-    name: PR_SKX_GNU1020_THREADS_SERIAL_RIGHT_REL
+    name: PR_BDW_GNU1020_THREADS_SERIAL_RIGHT_REL
     runs-on: [kk-env-gcc-10.2.0-latest]
 
     steps:
@@ -186,9 +186,9 @@ jobs:
         working-directory: kokkos-kernels/build
         run: ctest --output-on-failure -V --timeout 3600
 
-  PR_SKX_GNU1020_OPENMP_SERIAL_LEFT_OPENBLAS_OPENLAPACK_REL:
+  PR_BDW_GNU1020_OPENMP_SERIAL_LEFT_OPENBLAS_OPENLAPACK_REL:
     # TODO: allow re-run via retest label if: ${{ github.event.label.name == 'AT: RETEST' }}
-    name: PR_SKX_GNU1020_OPENMP_SERIAL_LEFT_OPENBLAS_OPENLAPACK_REL
+    name: PR_BDW_GNU1020_OPENMP_SERIAL_LEFT_OPENBLAS_OPENLAPACK_REL
     runs-on: [kk-env-openblas-0.3.21-gcc-10.2.0-latest]
     
     steps:
@@ -272,9 +272,9 @@ jobs:
         working-directory: kokkos-kernels/build
         run: ctest --output-on-failure -V --timeout 3600
 
-  PR_SKX_CLANG1001_THREADS_SERIAL_LEFT_REL:
+  PR_BDW_CLANG1001_THREADS_SERIAL_LEFT_REL:
     # TODO: allow re-run via retest label if: ${{ github.event.label.name == 'AT: RETEST' }}
-    name: PR_SKX_CLANG1001_THREADS_SERIAL_LEFT_REL
+    name: PR_BDW_CLANG1001_THREADS_SERIAL_LEFT_REL
     runs-on: [kk-env-llvm-10.0.1-latest]
 
     steps:
