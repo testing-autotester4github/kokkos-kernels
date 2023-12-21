@@ -19,9 +19,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  PR_BDW_HOPPER90_CUDA11_OPENMP_CUDA_LEFT_RIGHT_REL:
+  PR_HOPPER90_CUDA11_CUDA_LEFT_RIGHT_REL:
     # TODO: allow re-run via retest label if: ${{ github.event.label.name == 'AT: RETEST' }}
-    name: PR_BDW_GNU1020_OPENMP_LEFT_REL_NOETI
+    name: PR_HOPPER90_CUDA11_CUDA_LEFT_RIGHT_REL
     runs-on: [kk-env-cuda-11.2.2-gcc-8.4.0-latest]
     
     steps:
