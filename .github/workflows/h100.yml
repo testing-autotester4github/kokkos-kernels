@@ -80,6 +80,7 @@ jobs:
             -DKokkosKernels_ENABLE_TPL_CUSOLVER=OFF \
             -DKokkosKernels_ENABLE_TPL_CUSPARSE=OFF \
             -DKokkosKernels_ENABLE_TPL_CUBLAS=OFF \
+            -DKokkosKernels_INST_LAYOUTRIGHT=ON \
             -DCMAKE_EXE_LINKER_FLAGS="" \
             -DBUILD_SHARED_LIBS=OFF \
             -DKokkosKernels_ENABLE_DOCS=OFF \
