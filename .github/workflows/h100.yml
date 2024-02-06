@@ -60,7 +60,7 @@ jobs:
       - name: build_and_install_kokkos
         working-directory: kokkos/build
         run: make -j12 install
-
+# testing
       - name: configure_kokkos_kernels
         run: |
           mkdir -p kokkos-kernels/{build,install}
