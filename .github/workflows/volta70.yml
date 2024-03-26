@@ -1,4 +1,4 @@
-name: github-H100
+name: github-VOLTA70
 
 on:
   pull_request:
