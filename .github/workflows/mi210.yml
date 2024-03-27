@@ -1,0 +1,54 @@
+name: github-SPR
+
+on:
+  pull_request:
+    paths-ignore:
+    - '**/*.rst'
+    - '**/*.md'
+    - '**/requirements.txt'
+    - '**/*.py'
+    - 'docs/**'
+    types: [ opened, reopened, synchronize ]
+
+permissions:
+  contents: none
+
+# Cancels any in progress 'workflow' associated with this PR
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  PR_VEGA90A_ROCM560_HIP_SERIAL_LEFT_REL:
+    name: PR_VEGA90A_ROCM560_HIP_SERIAL_LEFT_REL
+    runs-on: [kk-env-hip-5.6.1-latest]
+    
+    steps:
+      - name: checkout_kokkos_kernels
+        uses: actions/checkout@v4
+        with:
+          path: kokkos-kernels
+
+      - name: checkout_kokkos
+        uses: actions/checkout@v4
+        with:
+          repository: kokkos/kokkos
+          ref: ${{ github.base_ref }}
+          path: kokkos
+
+      - name: configure
+        run: |
+          mkdir -p build
+          cd build
+          ../kokkos-kernels/scripts/cm_test_all_sandia \
+            rocm/5.6.1 \
+            --arch=VEGA90A \
+            --cxxstandard=c++17
+
+      - name: build
+        working-directory: build
+        run: make -j16
+
+      - name: test
+        working-directory: build
+        run: ctest --output-on-failure -V --timeout 3600
