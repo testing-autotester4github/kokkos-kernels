@@ -38,6 +38,11 @@ jobs:
 
       - name: configure_kokkos
         run: |
+          echo $LD_LIBRARY_PATH
+          env | grep -i cuda
+          cd / && find -iname 'libcuda.so*'
+          cd -
+          mkdir -p kokkos/{build,install}
           mkdir -p kokkos/{build,install}
           cd kokkos/build
           cmake -DCMAKE_CXX_COMPILER=$PWD/../bin/nvcc_wrapper \
@@ -91,4 +96,9 @@ jobs:
 
       - name: test
         working-directory: kokkos-kernels/build
-        run: ctest --output-on-failure -V --timeout 3600
+        run: |
+          echo $LD_LIBRARY_PATH
+          env | grep -i cuda
+          cd / && find -iname 'libcuda.so*'
+          cd -
+          ctest --output-on-failure -V --timeout 3600

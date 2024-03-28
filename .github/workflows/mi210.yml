@@ -38,7 +38,6 @@ jobs:
 
       - name: configure_kokkos
         run: |
-          mkdir -p kokkos/{build,install}
           cd kokkos/build
           HIPCC=$(which hipcc)
           cmake -DCMAKE_CXX_COMPILER=$HIPCC \
@@ -99,4 +98,4 @@ jobs:
 
       - name: test
         working-directory: build
-        run: echo $LD_LIBRARY_PATH && env | grep -i cuda && cd / && find -iname 'libcuda.so*' && cd - && ctest --output-on-failure -V --timeout 3600
+        run: ctest --output-on-failure -V --timeout 3600
