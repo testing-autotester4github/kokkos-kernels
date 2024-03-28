@@ -19,8 +19,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  PR_VEGA90A_ROCM560_HIP_SERIAL_LEFT_REL:
-    name: PR_VEGA90A_ROCM560_HIP_SERIAL_LEFT_REL
+  PR_VEGA90A_ROCM561_HIP_SERIAL_LEFT_REL:
+    name: PR_VEGA90A_ROCM561_HIP_SERIAL_LEFT_REL
     runs-on: [kk-env-hip-5.6.1-latest]
     
     steps:
@@ -99,4 +99,4 @@ jobs:
 
       - name: test
         working-directory: build
-        run: ctest --output-on-failure -V --timeout 3600
+        run: echo $LD_LIBRARY_PATH && env | grep -i cuda && cd / && find -iname 'libcuda.so*' && cd - && ctest --output-on-failure -V --timeout 3600
