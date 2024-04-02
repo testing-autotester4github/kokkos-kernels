@@ -92,4 +92,4 @@ jobs:
 
       - name: test
         working-directory: kokkos-kernels/build
-        run: ctest --output-on-failure -V --timeout 3600
+        run: env LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64 ctest --output-on-failure -V --timeout 3600
