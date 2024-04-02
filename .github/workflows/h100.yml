@@ -41,8 +41,6 @@ jobs:
       - name: configure_kokkos
         run: |
           mkdir -p kokkos/{build,install}
-          env | grep ROCPRIM
-          env | grep CMAKE_PREFIX
           cd kokkos/build
           cmake -DCMAKE_CXX_COMPILER=$PWD/../bin/nvcc_wrapper \
             -DCMAKE_CXX_FLAGS= \
