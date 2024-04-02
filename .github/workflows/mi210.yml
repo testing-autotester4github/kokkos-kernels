@@ -94,9 +94,9 @@ jobs:
             ..
 
       - name: build
-        working-directory: build
+        working-directory: kokkos-kernels/build
         run: make -j16
 
       - name: test
-        working-directory: build
+        working-directory: kokkos-kernels/build
         run: ctest --output-on-failure -V --timeout 3600
