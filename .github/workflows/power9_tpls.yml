@@ -1,4 +1,4 @@
-name: github-POWER9
+name: github-POWER9-TPLS
 
 on:
   pull_request:
