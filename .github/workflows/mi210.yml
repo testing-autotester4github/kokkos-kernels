@@ -124,7 +124,7 @@ jobs:
           cd kokkos/build
           HIPCC=$(which hipcc)
           cmake -DCMAKE_CXX_COMPILER=$HIPCC \
-            -DCMAKE_CXX_FLAGS=-O3 \
+            -DCMAKE_CXX_FLAGS="-O3 -I$ROCM_CORE_ROOT/include"
             -DCMAKE_EXE_LINKER_FLAGS= \
             -DCMAKE_INSTALL_PREFIX=$PWD/../install \
             -DKokkos_ENABLE_SERIAL=ON \
