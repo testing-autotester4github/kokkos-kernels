@@ -179,7 +179,7 @@ jobs:
 
       - name: build
         working-directory: kokkos-kernels/build
-        run: make -j12 all
+        run: make -j12 VERBOSE=1 all
 
       - name: test
         working-directory: kokkos-kernels/build
