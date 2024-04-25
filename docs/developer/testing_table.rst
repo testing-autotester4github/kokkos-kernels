@@ -108,7 +108,7 @@ The following is a description of column headings in the testing table.
       * int, `size_t`
       * LayoutLeft, LayoutRight
 
-    * * `PR_SKX_GNU1020_OPENMP_LEFT_REL_NOETI`
+    * * `PR_BDW_GNU1020_OPENMP_LEFT_REL_NOETI`
       * Skx
       * GNU 10.2.0
       * OpenMP
@@ -117,7 +117,7 @@ The following is a description of column headings in the testing table.
       * int, `size_t`
       * LayoutLeft
 
-    * * `PR_SKX_GNU1020_THREADS_SERIAL_RIGHT_REL`
+    * * `PR_BDW_GNU1020_THREADS_SERIAL_RIGHT_REL`
       * Skx
       * GNU 10.2.0
       * Threads, Serial
@@ -126,7 +126,7 @@ The following is a description of column headings in the testing table.
       * int, `size_t`
       * LayoutRight
 
-    * * `PR_SKX_GNU1020_OPENMP_SERIAL_LEFT_OPENBLAS_OPENLAPACK_REL`
+    * * `PR_BDW_GNU1020_OPENMP_SERIAL_LEFT_OPENBLAS_OPENLAPACK_REL`
       * Skx
       * GNU 10.2.0
       * Threads, Serial
@@ -144,7 +144,7 @@ The following is a description of column headings in the testing table.
       * int, `size_t`
       * LayoutLeft
 
-    * * `PR_SKX_CLANG1001_THREADS_SERIAL_LEFT_REL`
+    * * `PR_BDW_CLANG1001_THREADS_SERIAL_LEFT_REL`
       * Skx
       * Clang 10.0.1
       * Threads, Serial
