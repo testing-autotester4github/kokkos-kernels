@@ -18,9 +18,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-#ttt2222333
+#ttt2222333444
 jobs:
   mi210:
-    uses: testing-autotester4github/kokkos-kernels/.github/workflows/mi210.yml
+    uses: ./.github/workflows/mi210.yml
   h100:
-    uses: testing-autotester4github/kokkos-kernels/.github/workflows/h100.yml
+    uses: ./.github/workflows/h100.yml
