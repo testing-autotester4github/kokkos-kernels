@@ -21,6 +21,6 @@ concurrency:
 #ttt2222
 jobs:
   mi210:
-    uses: testing-autotester4github/kokkos-kernels/.github/workflows/mi210.yml@master
+    uses: testing-autotester4github/kokkos-kernels/.github/workflows/mi210.yml
   h100:
-    uses: testing-autotester4github/kokkos-kernels/.github/workflows/h100.yml@master
+    uses: testing-autotester4github/kokkos-kernels/.github/workflows/h100.yml
