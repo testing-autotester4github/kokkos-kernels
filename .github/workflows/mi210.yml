@@ -189,7 +189,7 @@ jobs:
 
       - name: configure_kokkos
         run: |
-          mkdir -p kokkos/{build,install}
+          kdir -p kokkos/{build,install}
           cd kokkos/build
 
           cmake \
@@ -254,3 +254,9 @@ jobs:
       - name: test
         working-directory: kokkos-kernels/build
         run: ctest --output-on-failure -V --timeout 3600
+
+  PR_TTT:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: ttt
+        run: dsa
