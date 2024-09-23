@@ -14,9 +14,6 @@ on:
       - submitted
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
   bdw:
     uses: ./.github/workflows/bdw.yml
