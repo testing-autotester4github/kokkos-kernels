@@ -1,0 +1,22 @@
+name: github-AT2
+
+on: 
+  pull_request:
+    paths-ignore:
+    - '**/*.rst'
+    - '**/*.md'
+    - '**/requirements.txt'
+    - '**/*.py'
+    - 'docs/**'
+    types: [ opened, reopened, synchronize ]
+  pull_request_review:
+    types:
+      - submitted
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bdw:
+    uses: ./.github/workflows/bdw.yml

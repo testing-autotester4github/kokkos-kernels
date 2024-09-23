@@ -24,8 +24,7 @@ namespace Impl {
 
 CudaLapackSingleton::CudaLapackSingleton() {
   cusolverStatus_t stat = cusolverDnCreate(&handle);
-  if (stat != CUSOLVER_STATUS_SUCCESS)
-    Kokkos::abort("CUSOLVER initialization failed\n");
+  if (stat != CUSOLVER_STATUS_SUCCESS) Kokkos::abort("CUSOLVER initialization failed\n");
 
   Kokkos::push_finalize_hook([&]() { cusolverDnDestroy(handle); });
 }
@@ -38,27 +37,5 @@ CudaLapackSingleton& CudaLapackSingleton::singleton() {
 }  // namespace Impl
 }  // namespace KokkosLapack
 #endif  // defined (KOKKOSKERNELS_ENABLE_TPL_CUSOLVER)
-
-#if defined(KOKKOSKERNELS_ENABLE_TPL_MAGMA)
-#include <KokkosLapack_tpl_spec.hpp>
-
-namespace KokkosLapack {
-namespace Impl {
-
-MagmaSingleton::MagmaSingleton() {
-  magma_int_t stat = magma_init();
-  if (stat != MAGMA_SUCCESS) Kokkos::abort("MAGMA initialization failed\n");
-
-  Kokkos::push_finalize_hook([&]() { magma_finalize(); });
-}
-
-MagmaSingleton& MagmaSingleton::singleton() {
-  static MagmaSingleton s;
-  return s;
-}
-
-}  // namespace Impl
-}  // namespace KokkosLapack
-#endif  // defined(KOKKOSKERNELS_ENABLE_TPL_MAGMA)
 
 #endif  // KOKKOSLAPACK_CUDA_TPL_HPP_

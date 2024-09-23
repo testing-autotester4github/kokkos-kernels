@@ -14,11 +14,11 @@
 //
 //@HEADER
 
-#ifndef KOKKOSPARSE_SPADD_TPL_SPEC_DECL_HPP_
-#define KOKKOSPARSE_SPADD_TPL_SPEC_DECL_HPP_
-
-namespace KokkosSparse {
-namespace Impl {}
-}  // namespace KokkosSparse
-
+#ifndef KOKKOSBLAS1_NRM2W_MV_ETI_SPEC_DECL_HPP_
+#define KOKKOSBLAS1_NRM2W_MV_ETI_SPEC_DECL_HPP_
+namespace KokkosBlas {
+namespace Impl {
+@BLAS1_NRM2W_MV_ETI_DECL_BLOCK@
+  } //IMPL 
+} //Kokkos
 #endif
