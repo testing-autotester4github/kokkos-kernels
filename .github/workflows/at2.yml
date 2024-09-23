@@ -9,21 +9,14 @@ on:
     - '**/*.py'
     - 'docs/**'
     types: [ opened, reopened, synchronize ]
+  pull_request_review:
+    types:
+      - submitted
+  workflow_dispatch:
 
 permissions:
-  contents: none
-
-# Cancels any in progress 'workflow' associated with this PR
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  contents: read
 
 jobs:
-  mi210:
-    uses: ./.github/workflows/mi210.yml
-  h100:
-    uses: ./.github/workflows/h100.yml
   bdw:
     uses: ./.github/workflows/bdw.yml
-  volta70:
-    uses: ./.github/workflows/volta70.yml
