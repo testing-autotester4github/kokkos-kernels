@@ -11,7 +11,7 @@
 // Part of Kokkos, under the Apache License v2.0 with LLVM Exceptions.
 // See https://kokkos.org/LICENSE for license information.
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
-//
+// ddd
 //@HEADER
 
 #ifndef KOKKOSKERNELS_TEST_UTILS_HPP
@@ -647,7 +647,7 @@ class RandCsMatrix {
     __map_d        = MapViewTypeD("RandCsMatrix.ColMapViewType", __dim1 + 1);
     __map          = Kokkos::create_mirror_view(__map_d);
     __ids_d        = IdViewTypeD("RandCsMatrix.RowIdViewType",
-                                 dim2 * dim1 + 1);  // over-allocated
+                          dim2 * dim1 + 1);  // over-allocated
     __ids          = Kokkos::create_mirror_view(__ids_d);
 
     uint64_t ticks = std::chrono::high_resolution_clock::now().time_since_epoch().count() % UINT32_MAX;
